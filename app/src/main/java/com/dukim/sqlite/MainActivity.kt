@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
             .build()
 
         val adapter = RecyclerAdapter()
+        adapter.helper = helper
         adapter.listData = (helper?.roomMemoDao()?.getAll()?: mutableListOf()).toMutableList()
 
         recyclerMemo.adapter = adapter
